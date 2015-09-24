@@ -1,0 +1,92 @@
+div.row.row-main
+ div.column.small-12.medium-6 &nbsp;
+div.row.row-main
+ div.column.small-12.medium-4
+  img(src="/static/images/erotische-kleurboek.gif")
+ div.column.small-12.medium-8
+  h2 Het eerste échte <nobr>erotische kleurboek</nobr>
+
+  p Dacht je echt alle kleurboeken te kennen? Dan heb je deze over het hoofd gezien. 
+   | Het eerste échte erotische kleurboek. En zoals de naam al aangeeft 
+   | is dit boek uitsluitend bedoeld voor volwassenen. Een kleurboek met een knipoog, 
+   | ideaal als ondeugend cadeautje maar natuurlijk ook om jezelf of je partner vele uren plezier te bezorgen. 
+  p  De dertien erotische scenes zijn gesitueerd in verschillende, 
+   | vaak stijlvolle achtergronden en bieden voor ieder wat wils. 
+   | Geef je over aan dit spannende en ook weer ontspannende erotische kleurboek!
+
+  p ‘Het eerste échte erotische kleurboek’
+   | voor slechts <nobr>€ 12,95</nobr> <nobr>(incl. verzendkosten)</nobr>
+  button.radius(onclick="window.location.href='#bestellen'") Bestel nu!
+  p Tip: Special voor partijen en feestjes hebben wij een pakket
+   | met vijf kleurboeken voor <nobr>€ 43,95</nobr> <nobr>(incl. bezorgkosten)</nobr>.
+div.row.row-main
+ div.column.small-12
+  div.panel
+   h3 Een leuk en verrassend kleurboek om cadeau te geven of uzelf te verwennen.
+div#form.row.row-secondary
+ form#from(action="#", onsubmit="registerAPI(this);return false;")
+  div.column.small-12
+   a(name="bestellen")
+   h2 Bestel formulier
+   p We sturen de bestelling naar je toe nadat je het bedrag van je 
+    | bestelling naar ons hebt over gemaakt op rekeningnummer: NL66ABNA0565740717 t.n.v. S. Dijkema 
+    |onder vermelding van de volgende code: 
+    strong
+     span#code
+    p#message
+  div.column.small-12.medium-6
+   label Naam
+   input.required(type="text", name="naam", placeholder="Naam")
+  div.column.small-12.medium-6
+   label E-mail
+   input(type="email", name="email", placeholder="E-mail niet verplicht maar wel makkelijk voor communicatie")
+
+  div.column.small-12
+   label Adres
+   input.required(type="text", name="adres", placeholder="Adres")
+
+  div.column.small-4.medium-6
+   label Postcode
+   input.required(type="text", name="postcode", placeholder="Postcode")
+  div.column.small-8.medium-6
+   label Plaats
+   input.required(type="text", name="plaats", placeholder="Plaats")
+
+  div.column.small-12
+   select(name="product")
+    option Het échte erotische kleurboek € 12,95  (incl. bezorgkosten)
+    option Pakket van 5 kleurboeken voor € 43,95  (incl. bezorgkosten)
+    input#hiddencode(type="hidden" name="code")
+  div.column.small-12
+   ul
+    li Om de verrassing niet te verklappen sturen wij het kleurboek in een neutraal witte envelop.
+    li Tip: als je twee euro extra overmaakt dan ontvang je het kleurboek in luxe cadeaupapier.
+   input.button.radius(type="submit", value="Verzenden!")
+   blockquote Let wel: dit kleurboek bevat explicite seksuele afbeeldingen en is dus niet bedoeld als kleurboek voor personen onder de 18 jaar.
+div#success.row.row-main(style="display:none")
+ div.column.small-12.medium-12
+  h2 Bedankt voor het bestellen!
+  p Zodra het geld op rekeningnummer: NL66ABNA0565740717 t.n.v. S. Dijkema staat sturen wij het kleurboek z.s.m naar je toe.
+   | Voor de snelle verwerking en eventuele vragen kunt u de volgende bestelcode bij betaling vermelden: 
+   strong
+    span#feedbackcode
+div.row.row-footer
+ div.column.small-12.medium-4
+  a(name="contact")
+  strong Contact
+  ul 
+   li awabipublishing@gmail.com
+  ul.copy
+   li &copy; 2015 Studio Sacko Dijkema
+   li http://www.studiosackodijkema.nl
+ div.column.small-12.medium-4
+  strong Social
+  ul.social 
+   a.fi-social-facebook(href="http://facebook.com/erotischeboeken")  
+   a.fi-social-twitter(href="http://twitter.com/erotischeboeken")
+ div.column.small-12.medium-4
+  strong Overig
+  ul 
+   li KvK 34071698
+   li Nieuwe Hemweg 7P, Amsterdam
+

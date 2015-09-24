@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <title>Het échte erotische kleurboek</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Het eerste échte erotische kleurboek." />
+  <meta name="keywords" content="volwassen erotisch kleurboek" />
+  <meta name="author" content="Andries Filmer, http://andries.filmer.nl">
+
+  <meta name="fragment" content="!">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Place favicon.ico and apple-touch-icon(s) -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/static/images/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/static/images/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/static/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/static/images/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/static/images/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/static/images/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/static/images/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/static/images/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon-180x180.png">
+  <link rel="shortcut icon" href="/static/images/favicon.ico">
+  <link rel="icon" type="image/png" href="/static/images/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/static/images/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/static/images/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/static/images/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/static/images/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#b91d47">
+  <meta name="msapplication-TileImage" content="/static/images/mstile-144x144.png">
+  <meta name="msapplication-config" content="/static/images/browserconfig.xml">
+
+  <!-- @if NODE_ENV == 'DEVELOPMENT' -->
+  <!-- CSS development <!-- @echo pkgname --> -->
+  <link href="vendor/css/normalize.css" rel="stylesheet" />
+  <link href="vendor/css/foundation.css" rel="stylesheet" />
+  <link href="vendor/css/foundation-icons.css" rel="stylesheet" />
+  <link href="css/<!-- @echo pkgname -->.css" rel="stylesheet" />
+  <!-- @endif -->
+
+  <!-- @if NODE_ENV == 'PRODUCTION' -->
+  <!-- CSS production <!-- @echo pkgname --> -->
+  <link rel="stylesheet" href="/vendor/css/vendor.min.css"/>
+  <link rel="stylesheet" href="/css/<!-- @echo pkgname -->.min.css"/>
+  <!-- @endif -->
+
+</head>
+<body ng-app="app">
+
+<div class="container">
+   <!-- @include ../../public/partials/home.html -->
+</div>
+<script type="text/javascript" charset="utf-8">
+
+// Generate random code.
+code = Math.random().toString(36).substring(3,9).toUpperCase();
+document.getElementById('code').textContent = code;
+document.getElementById('feedbackcode').textContent = code;
+document.getElementById('hiddencode').value = code;
+
+function registerAPI(form) {
+  // Reset error style classes for required fields.
+  var els = document.getElementsByClassName("required-error");
+  Array.prototype.forEach.call(els, function(el) {
+    el.className = "required";
+  });
+  // Set params from form fields.
+  var params = {
+    naam: form.naam.value,
+    email: form.email.value,
+    adres: form.adres.value,
+    plaats: form.plaats.value,
+    postcode: form.postcode.value,
+    product: form.product.value,
+    code: form.code.value
+  };
+  var xhr = new XMLHttpRequest();
+  // Set url for delvelopment or production
+  xhr.open("POST", "http://form-api.filmer.net/mailer");
+  // Set 'x-form-template-name' to the name of the template on server-site.
+  xhr.setRequestHeader('x-form-template-name', 'erotischekleurboeken/');
+  xhr.onload = function() {
+    var json = JSON.parse(xhr.responseText);
+    console.log(json);
+    if (json.success) {
+      showSuccess();
+    } else {
+      showError(json.message);
+    }
+  }
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.send(JSON.stringify(params));
+}
+function showSuccess() {
+  document.getElementById("form").style.display = "none";
+  document.getElementById("success").style.display = "block";
+  window.location.hash = '#success';
+}
+function showError(err) {
+  document.getElementById("message").innerHTML = err;
+  var els = document.getElementsByClassName("required");
+  Array.prototype.forEach.call(els, function(el) {
+    if (el.value == ''){
+      el.className = el.className + " required-error";
+    }
+  });
+  window.location.hash = '#message';
+}
+</script>
+
+</body>
+</html>

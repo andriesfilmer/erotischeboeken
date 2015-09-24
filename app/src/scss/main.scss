@@ -1,0 +1,99 @@
+/* main */
+
+/* Foundation overwrites */
+body {
+  background: #A96B58;
+  background: url(/static/images/bg.gif) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #D22027;
+}
+
+h3 {
+    margin: 1em;
+    font-size: 1.2em;
+    padding-left: 1rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+button.radius, .button.radius {
+    border-radius: 5px;
+    background-color: #2A3E92;
+}
+
+img {
+    margin-bottom: 1em;
+}
+
+.panel {
+    background-color: #F3E1E1;
+    border-radius: 5px;
+}
+.icon-bar {
+  margin-bottom: -6px; /* Icon-bar issue?! */
+  background: #2A3E92;
+  &.five-up .item {
+      font-size: 1.2rem;
+      color: #fff;
+      width: 50%;
+  }
+}
+
+.row-main {
+  background-color: #fff;
+}
+.row-secondary {
+  padding: 2rem 0 2rem 0;
+  background-color: #fff;
+  color: #5A1111;
+  label {
+    color: #5A1111;
+  }
+}
+.row-footer {
+  background-color: #19296F;
+  color: #fff;
+  padding: 3rem;
+  ul.social {
+      font-size: 4rem;
+    li {
+      list-style-type:none;
+    }
+    a {
+      color: #fff;
+    }
+  }
+  ul.copy {
+   font-size: 0.8rem;
+    li {
+      list-style-type:none;
+    }
+  }
+}
+
+Blockquote {
+ font-size: 0.8rem;
+}
+
+/* Form */
+.block {
+  margin-bottom: 1em;
+}
+.required-error {
+  border: 2px solid red !important;
+  background-color: rgb(244, 209, 209) !important;
+}
+#message {
+  color: red;
+  font-size: large;
+}
+

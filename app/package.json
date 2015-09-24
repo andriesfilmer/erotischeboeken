@@ -1,0 +1,24 @@
+{
+  "name": "Boilerplate",
+  "description": "Boiler-plate",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "grunt-appcache": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-jade": "latest",
+    "grunt-env": "latest",
+    "grunt-ng-constant": "latest",
+    "grunt-preprocess": "latest",
+    "grunt-remove-logging": "latest",
+    "grunt": "latest"
+  }
+}
